@@ -9,12 +9,54 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="/styles/style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
-    <title>Project Zero: myTamagotchi</title>
+    <title>projectZora</title>
 </head>
 <body>
-    <h1>myTamagotchi</h1>
+    <div class="parent">
 
+        <!-- header -->
+    <header class="title"> 
+        <h1 id="main-title">projectZora</h1>
+        <img class="title-image" src="/assets/cat-standing-logo.png" alt="Cartoon Russian Blue cat"> 
+    </header>
+
+        <!-- main & game area -->
+    <main class="main-area">
+
+        <!-- Scoreboard -->
+
+        <div class="statistics">
+            <span id="age">Age: 0</span>
+            <span id="hunger">Hunger: 0</span>
+            <span id="boredom">Boredom: 0</span>
+            <span id="sleepiness">Sleepiness: 0</span>
+        </div>
+
+        <!-- game area start -->
+
+        <div class="game-area">
+        <img class="game-background" src="/assets/background-livingroom.png" alt="Game background - cartoon living room">  
+
+        </div>
+        
+        <div class="play-guide">
+        How to play
+        </div>
+
+    </main>
+        
+        <!-- footer -->
+    <footer class="footer">
+     <p>Made by Jessica Hansen for WC-SEIR-1207 2020 Project Zero.
+        <br />Please support your local rescue organizations!
+     </p>
+    </footer>
+    
+    </div>
 
 </body>
 </html>

@@ -1,3 +1,80 @@
-body {
-    background-color: #FEC6B5 ;
+/* Main grid styling */
+
+.parent {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-content: center;
+    background-color: #FEC6B5;
+    border: 3px solid #C94D45;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 1000px;
+    min-width: 700px;
+}
+
+/* Header styling */
+
+.title {
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#main-title {
+    margin: 0;
+    align-self: flex-end;
+}
+
+.title-image {
+    height: 110px;
+    padding-top: 5px;
+}
+
+/* Main area styling */
+
+.main-area {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Statistics area styling */
+
+.statistics {
+    margin: 25px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+/* Game area styling */
+
+.game-area {
+    margin: 5px;
+    border: 2px solid #C94D45;
+    background-color: #C94D45;
+    border-radius: 5px;
+    height: 700px;
+}
+
+.game-background {
+    border-radius: 3px;
+    max-height: 650px;
+    width: auto;
+}
+
+/* Player guide styling */
+
+.play-guide {
+    border: 1px solid #C94D45;
+    border-radius: 5px;
+    background-color: #FDDFD4;
+    margin: 10px;
+}
+
+/* Footer styling */
+
+.footer {
+    text-align: center;
+    font-size: 14px;
 }
