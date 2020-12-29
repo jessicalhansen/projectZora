@@ -10,6 +10,7 @@
     margin: auto;
     max-width: 1000px;
     min-width: 700px;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 /* Header styling */
@@ -33,9 +34,6 @@
 
 /* Main area styling */
 
-.main-area {
-    font-family: 'Ubuntu', sans-serif;
-}
 
 /* Statistics area styling */
 
@@ -63,18 +61,45 @@
     width: auto;
 }
 
+/* Game button area style */
+
+.game-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: -27px;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  outline: none;  
+}
+
+.game-buttons img {
+    width: 80px;
+}
+
+
 /* Player guide styling */
 
 .play-guide {
     border: 1px solid #C94D45;
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: #FDDFD4;
-    margin: 10px;
+    margin: 5px;
+    padding: 5px;
 }
 
 /* Footer styling */
 
-.footer {
+footer {
     text-align: center;
     font-size: 14px;
+    margin: 15px;
 }
+
+footer p {
+    margin: 0;
+}
+
