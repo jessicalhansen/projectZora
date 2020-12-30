@@ -20,7 +20,7 @@ console.log('Project Zero');
     - Boredom: 0 --> 10 - increment by 1 every 10 seconds
        - possibly add increment by 1 after making cat 'sleep'. 
 
-    - Age: 0 --> 10 - increment by 1 every 60 seconds. 
+    - Age: 0 - increment by 1 every 60 seconds. 
 
 
 3. Create button bar and assign methods (icons in /assets/)
@@ -39,6 +39,6 @@ console.log('Project Zero');
 
 5. GAME OVER - when any stat hits 10
     - Zora runs away, animiate angry cat icon
-    - except age, cat sleeping icon animates on screen instead. 
+    - except age.
         
 */
