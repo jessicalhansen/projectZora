@@ -60,9 +60,8 @@ body {
     background-size: inherit;
     background-repeat: no-repeat;
     display: grid;
+    grid-template-rows: 3.5fr 3.5fr 1fr;
 }
-
-
 
 /* Start button styling */
 
@@ -71,28 +70,35 @@ body {
     align-self: end;
 }
 
+/* Sprite area styling */
+
+.sprite-area {
+    align-self: end;
+    justify-self: center;
+}
+
 /* Game button area style */
 
-.game-buttons {
+.game-controls {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-self: flex-end;
 }
 
-.game-buttons button {
+.game-controls button {
   border: none;
   background-color: transparent;
   outline: none;  
 }
 
-.game-buttons button:hover {
+.game-controls button:hover {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
 }
 
-.game-buttons img {
+.game-controls img {
     width: 80px;
 }
 
