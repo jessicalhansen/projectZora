@@ -42,3 +42,15 @@ console.log('Project Zero');
     - except age.
         
 */
+
+// 1. Create a cat class
+
+class Cat {
+    constructor(name=`Zora`, age, hunger, boredom, sleepiness) {
+        this.name = name;
+        this.age = age;
+        this.hunger = hunger;
+        this.boredom = boredom;
+        this.sleepiness = sleepiness;
+    }
+}
