@@ -79,6 +79,39 @@ class Cat {
 const newCat = new Cat;
 
 ///////////////////////////////////////////////
-        //   Statistics functions   //
+        //   Stat functions   //
 ///////////////////////////////////////////////
 
+// let timer = 0;
+
+function renderStats() {
+    // $(`#age`).text(`Age: ${newCat.age}`);
+    $(`#timer`).text(`Timer: ${timer}`);
+};
+
+//////////////////////////////////////////////
+           //   Game timer   //
+/////////////////////////////////////////////
+let timer = 0;
+function startTimer() {
+    const counter = setInterval(function() {
+        timer++;
+        
+        renderStats();
+    }, 1000);
+}
+
+/////////////////////////////////////////////
+       //   Start button function   //
+/////////////////////////////////////////////
+
+function startClick() {
+    startTimer();
+}
+
+////////////////////////////////////////////
+         //   Event Listeners   //
+////////////////////////////////////////////
+
+// Start Button Click
+startGameBtn.addEventListener('click', startClick);
