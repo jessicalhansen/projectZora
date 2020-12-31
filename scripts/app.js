@@ -10,7 +10,7 @@ console.log('Project Zero');
     - Age: 0
 
 2. Create a stats display and assign methods
-    - Name 
+    - Timer 
     - Hunger: 0 --> 10 - increment by 1 every 10 seconds 
         - possibly add increment by 1 after 'playing' with cat.
 
@@ -43,14 +43,42 @@ console.log('Project Zero');
         
 */
 
-// 1. Create a cat class
+///////////////////////////////////////////////////
+                //   Buttons   //
+///////////////////////////////////////////////////
+
+// Start button
+const startGameBtn = document.getElementById(`start-game-button`);
+
+// Game control buttons
+const foodBtn = document.getElementById('food-button');
+const playBtn = document.getElementById('play-button');
+const sleepBtn = document.getElementById('sleep-button');
+
+///////////////////////////////////////////////////
+             //   Game Objects   //
+///////////////////////////////////////////////////
+
+// const zora = {
+//     age: 0,
+//     hunger: 0,
+//     boredom: 0,
+//     sleepiness: 0,
+// };
 
 class Cat {
-    constructor(name=`Zora`, age, hunger, boredom, sleepiness) {
+    constructor(name=`Zora`) {
         this.name = name;
-        this.age = age;
-        this.hunger = hunger;
-        this.boredom = boredom;
-        this.sleepiness = sleepiness;
+        this.age = 0;
+        this.hunger = 0;
+        this.boredom = 0;
+        this.sleepiness = 0;
     }
 }
+
+const newCat = new Cat;
+
+///////////////////////////////////////////////
+        //   Statistics functions   //
+///////////////////////////////////////////////
+
