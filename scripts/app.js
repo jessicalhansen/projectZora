@@ -107,6 +107,7 @@ function startTimer() {
 
 function startClick() {
     startTimer();
+    $(`#start-game-button`).remove();
 }
 
 ////////////////////////////////////////////
