@@ -54,7 +54,7 @@ body {
     border: 2px solid #C94D45;
     background-color: #C94D45;
     border-radius: 5px;
-    height: 740px;
+    height: 720px;
     width: 950px;
     background-image: url(/assets/background-livingroom.png);
     background-size: inherit;
@@ -70,11 +70,25 @@ body {
     align-self: end;
 }
 
+#start {
+    font-size: 100px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: -3px -3px 0 #C94D45, 3px -3px 0 #C94D45, 3px 3px 0 #C94D45;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
 /* Sprite area styling */
 
 .sprite-area {
     align-self: end;
     justify-self: center;
+}
+
+.sprite img {
+    max-width: 275px;
+    max-height: 275px;
 }
 
 /* Game button area style */
@@ -86,13 +100,13 @@ body {
   align-self: flex-end;
 }
 
-.game-controls button {
+button {
   border: none;
   background-color: transparent;
   outline: none;  
 }
 
-.game-controls button:hover {
+button:hover {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
