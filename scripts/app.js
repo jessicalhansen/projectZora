@@ -102,12 +102,23 @@ function startTimer() {
 }
 
 /////////////////////////////////////////////
+           //  Create Sprite  //
+/////////////////////////////////////////////
+
+function createStartSprite() {
+    const createSprite = $(`<img src="/assets/cat-standing-left.png" id="sprite">`);
+
+    $(`.sprite`).append(createSprite);
+};
+
+/////////////////////////////////////////////
        //   Start button function   //
 /////////////////////////////////////////////
 
 function startClick() {
     startTimer();
     $(`#start-game-button`).remove();
+    createStartSprite();
 }
 
 ////////////////////////////////////////////
