@@ -84,8 +84,11 @@ const newCat = new Cat;
 ///////////////////////////////////////////////
 
 function renderStats() {
-    $(`#age`).text(`Age: ${newCat.age}`);
     $(`#timer`).text(`Timer: ${timer}`);
+    $(`#age`).text(`Age: ${newCat.age}`);
+    $(`#hunger`).text(`Hunger: ${newCat.hunger}`);
+    $(`#boredom`).text(`Boredom: ${newCat.boredom}`);
+    $(`#sleepiness`).text(`Sleepiness: ${newCat.sleepiness}`);
 };
 
 //////////////////////////////////////////////
@@ -108,6 +111,9 @@ function startTimer() {
 function increaseStats() {
     if (timer % 10 === 0) {
         newCat.age++;
+        newCat.hunger++;
+        newCat.boredom++;
+        newCat.sleepiness++;
 
         renderStats();
     }
