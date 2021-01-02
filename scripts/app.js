@@ -20,7 +20,7 @@ console.log('Project Zero');
     - Boredom: 0 --> 10 - increment by 1 every 10 seconds
        - possibly add increment by 1 after making cat 'sleep'. 
 
-    - Age: 0 - increment by 1 every 60 seconds. 
+    - Age: 0 - possibly increment by 1 every 60 seconds. 
 
 
 3. Create button bar and assign methods (icons in /assets/)
@@ -103,17 +103,26 @@ function startTimer() {
         
         increaseStats();
         renderStats();
+        increaseAge();
     }, 1000);
 }
 
-//  Increment stats
+//  Increase stats every 10 seconds, except age.
 
 function increaseStats() {
     if (timer % 10 === 0) {
-        newCat.age++;
         newCat.hunger++;
         newCat.boredom++;
         newCat.sleepiness++;
+
+        renderStats();
+    }
+}
+
+// Increase age every 30 seconds.
+function increaseAge() {
+    if (timer % 30 === 0) {
+        newCat.age++;
 
         renderStats();
     }
