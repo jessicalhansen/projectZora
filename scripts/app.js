@@ -20,7 +20,7 @@ console.log('Project Zero');
     - Boredom: 0 --> 10 - increment by 1 every 10 seconds
        - possibly add increment by 1 after making cat 'sleep'. 
 
-    - Age: 0 - possibly increment by 1 every 60 seconds. 
+    - Age: 0 - possibly increment by 1 every 30 seconds. 
 
 
 3. Create button bar and assign methods (icons in /assets/)
@@ -59,13 +59,6 @@ const sleepBtn = document.getElementById('sleep-button');
              //   Game Objects   //
 ///////////////////////////////////////////////////
 
-// const zora = {
-//     age: 0,
-//     hunger: 0,
-//     boredom: 0,
-//     sleepiness: 0,
-// };
-
 class Cat {
     constructor(name=`Zora`) {
         this.name = name;
@@ -103,7 +96,14 @@ function startTimer() {
         
         increaseStats();
         renderStats();
-        increaseAge();
+
+        // STOP TIMER WHEN STATS HIT 10
+        if (newCat.hunger === 10 
+            || newCat.boredom === 10 
+            || newCat.sleepiness === 10) {
+            clearInterval(counter);
+            $(`#sprite`).attr(`src`, `/assets/madcat.png`);
+        }
     }, 1000);
 }
 
@@ -117,13 +117,9 @@ function increaseStats() {
 
         renderStats();
     }
-}
-
-// Increase age every 30 seconds.
-function increaseAge() {
+    // increase age every 20 seconds.
     if (timer % 30 === 0) {
         newCat.age++;
-
         renderStats();
     }
 }
