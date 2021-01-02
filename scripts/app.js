@@ -77,28 +77,40 @@ class Cat {
 }
 
 const newCat = new Cat;
+// may add ability to create additional cats in future.
 
 ///////////////////////////////////////////////
-        //   Stat functions   //
+           //   Stat functions   //
 ///////////////////////////////////////////////
-
-// let timer = 0;
 
 function renderStats() {
-    // $(`#age`).text(`Age: ${newCat.age}`);
+    $(`#age`).text(`Age: ${newCat.age}`);
     $(`#timer`).text(`Timer: ${timer}`);
 };
 
 //////////////////////////////////////////////
-           //   Game timer   //
+           //   Game timers   //
 /////////////////////////////////////////////
+
 let timer = 0;
+
 function startTimer() {
     const counter = setInterval(function() {
         timer++;
         
+        increaseStats();
         renderStats();
     }, 1000);
+}
+
+//  Increment stats
+
+function increaseStats() {
+    if (timer % 10 === 0) {
+        newCat.age++;
+
+        renderStats();
+    }
 }
 
 /////////////////////////////////////////////
