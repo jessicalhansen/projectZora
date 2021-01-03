@@ -140,7 +140,7 @@ function increaseStats() {
 
 // Food control button
 
-$(foodBtn).on(`click`, function() {
+foodBtn.addEventListener(`click`, function() {
     $(`#sprite`).attr(`src`, `/assets/cat-happy.png`);
 
     if (newCat.hunger > 0) {
@@ -157,6 +157,18 @@ playBtn.addEventListener(`click`, function() {
 
     if (newCat.boredom > 0) {
         newCat.boredom = 0;
+        renderStats();
+    }
+    else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
+});
+
+// Sleep control button
+
+sleepBtn.addEventListener(`click`, function() {
+    $(`#sprite`).attr(`src`, `/assets/cat-sleeping.png`);
+
+    if (newCat.sleepiness > 0) {
+        newCat.sleepiness = 0;
         renderStats();
     }
     else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
