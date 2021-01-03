@@ -44,7 +44,7 @@ console.log('Project Zero');
 */
 
 ///////////////////////////////////////////////////
-                //   Buttons   //
+           //   Button Selectors  //
 ///////////////////////////////////////////////////
 
 // Start button
@@ -123,6 +123,20 @@ function increaseStats() {
         renderStats();
     }
 }
+
+/////////////////////////////////////////////
+        //   Control button functions  //
+/////////////////////////////////////////////
+
+$(foodBtn).on(`click`, function() {
+    $(`#sprite`).attr(`src`, `/assets/cat-happy.png`);
+
+    if (newCat.hunger > 0) {
+        newCat.hunger = 0;
+        renderStats();
+    } 
+    else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
+});
 
 /////////////////////////////////////////////
            //  Create Sprite  //
