@@ -1,3 +1,9 @@
+/* Color variables */
+:root {
+    --mainred: #C94D45;
+    --wallpaper: #FEC6B5; 
+    --readme: #FDDFD4;
+}
 /* Main grid styling */
 body {
     font-family: 'Ubuntu', sans-serif;
@@ -7,8 +13,8 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     justify-content: center;
-    background-color: #FEC6B5;
-    border: 3px solid #C94D45;
+    background-color: var(--wallpaper);
+    border: 3px solid var(--mainred);
     border-radius: 10px;
     margin: auto;
     max-width: 1000px;
@@ -47,12 +53,17 @@ body {
     align-items: flex-end;
 }
 
+.statistics i {
+    color: var(--mainred);
+    font-size: 18px;
+}
+
 /* Game area styling */
 
 .game-area {
     margin: 5px;
-    border: 2px solid #C94D45;
-    background-color: #C94D45;
+    border: 2px solid var(--mainred);
+    background-color: var(--mainred);
     border-radius: 5px;
     height: 720px;
     width: 950px;
@@ -74,7 +85,9 @@ body {
     font-size: 100px;
     font-weight: bold;
     color: #ffffff;
-    text-shadow: -3px -3px 0 #C94D45, 3px -3px 0 #C94D45, 3px 3px 0 #C94D45;
+    text-shadow: -3px -3px 0 var(--mainred), 
+                  3px -3px 0 var(--mainred), 
+                  3px 3px 0 var(--mainred);
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -119,9 +132,9 @@ button:hover {
 /* Player guide styling */
 
 .play-guide {
-    border: 1px solid #C94D45;
+    border: 1px solid var(--mainred);
     border-radius: 3px;
-    background-color: #FDDFD4;
+    background-color: var(--readme);
     margin: 5px;
     padding: 5px;
     align-self: center;

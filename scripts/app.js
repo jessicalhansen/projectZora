@@ -15,7 +15,7 @@ console.log('Project Zero');
         - possibly add increment by 1 after 'playing' with cat.
 
     - Sleepiness: 0 --> 10 - increment every 10 seconds 
-        - possibly add increment by 1 after 'playing' with cat.
+        - possibly add increment by 1 after 'feeding' cat.
 
     - Boredom: 0 --> 10 - increment by 1 every 10 seconds
        - possibly add increment by 1 after making cat 'sleep'. 
@@ -139,8 +139,7 @@ function increaseStats() {
 /////////////////////////////////////////////
 
 // Food control button
-
-foodBtn.addEventListener(`click`, function() {
+function foodTime() {
     $(`#sprite`).attr(`src`, `/assets/cat-happy.png`);
 
     if (newCat.hunger > 0) {
@@ -148,11 +147,10 @@ foodBtn.addEventListener(`click`, function() {
         renderStats();
     } 
     else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
-});
+};
 
 // Play control button
-
-playBtn.addEventListener(`click`, function() {
+function playTime() {
     $(`#sprite`).attr(`src`, `/assets/cat-lyingdown-eyes.png`);
 
     if (newCat.boredom > 0) {
@@ -160,11 +158,10 @@ playBtn.addEventListener(`click`, function() {
         renderStats();
     }
     else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
-});
+};
 
 // Sleep control button
-
-sleepBtn.addEventListener(`click`, function() {
+function sleepTime() {
     $(`#sprite`).attr(`src`, `/assets/cat-sleeping.png`);
 
     if (newCat.sleepiness > 0) {
@@ -172,7 +169,7 @@ sleepBtn.addEventListener(`click`, function() {
         renderStats();
     }
     else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
-});
+};
 
 /////////////////////////////////////////////
            //  Create Sprite  //
@@ -200,3 +197,14 @@ function startClick() {
 
 // Start Button Click
 startGameBtn.addEventListener('click', startClick);
+
+// Food control button
+foodBtn.addEventListener(`click`, foodTime);
+
+// Play control button
+playBtn.addEventListener(`click`, playTime);
+
+// Sleep control button
+sleepBtn.addEventListener(`click`, sleepTime);
+
+
