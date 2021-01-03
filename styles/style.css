@@ -60,7 +60,7 @@ body {
     background-size: inherit;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-rows: 4fr 3fr 1fr;
+    grid-template-rows: 3fr 2fr 1fr;
 }
 
 /* Start button styling */

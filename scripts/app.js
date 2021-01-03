@@ -56,6 +56,16 @@ const playBtn = document.getElementById('play-button');
 const sleepBtn = document.getElementById('sleep-button');
 
 ///////////////////////////////////////////////////
+             //  Sprite Selectors //
+///////////////////////////////////////////////////
+
+// const startSprite = $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
+// const foodSprite = $(`#sprite`).attr(`src`, `/assets/cat-happy.png`);
+// const playSprite = $(`#sprite`).attr(`src`, `/assets/cat-lyingdown-eyes.png`);
+// const sleepSprite = $(`#sprite`).attr(`src`, `/assets/cat-sleeping.png`);
+// const madSprite = $(`#sprite`).attr(`src`, `/assets/madcat.png`);
+
+///////////////////////////////////////////////////
              //   Game Objects   //
 ///////////////////////////////////////////////////
 
@@ -128,6 +138,8 @@ function increaseStats() {
         //   Control button functions  //
 /////////////////////////////////////////////
 
+// Food control button
+
 $(foodBtn).on(`click`, function() {
     $(`#sprite`).attr(`src`, `/assets/cat-happy.png`);
 
@@ -135,6 +147,18 @@ $(foodBtn).on(`click`, function() {
         newCat.hunger = 0;
         renderStats();
     } 
+    else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
+});
+
+// Play control button
+
+playBtn.addEventListener(`click`, function() {
+    $(`#sprite`).attr(`src`, `/assets/cat-lyingdown-eyes.png`);
+
+    if (newCat.boredom > 0) {
+        newCat.boredom = 0;
+        renderStats();
+    }
     else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
 });
 
