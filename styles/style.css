@@ -75,7 +75,7 @@ body {
     grid-template-rows: 4fr 3fr 1fr;
     width: 950px;
     height: 720px;
-    background-image: url("./assets/background-livingroom-night.png");
+    background-image: url("../assets/background-livingroom-night.png");
     background-size: inherit;
     background-repeat: no-repeat;
     background-color: #000000;
@@ -124,31 +124,31 @@ body {
 }
 
 #sprite {
-    content: url("./assets/cat-standing-left.png");
+    content: url("../assets/cat-standing-left.png");
     max-width: 275px;
     max-height: 275px;
 }
 
 #sprite-food {
-    content: url("./assets/cat-happy.png");
+    content: url("../assets/cat-happy.png");
     max-width: 275px;
     max-height: 275px;
 }
 
 #sprite-play {
-    content: url("./assets/cat-lyingdown-eyes.png");
+    content: url("../assets/cat-lyingdown-eyes.png");
     max-width: 275px;
     max-height: 275px;
 }
 
 #sprite-sleep {
-    content: url("./assets/cat-sleeping.png");
+    content: url("../assets/cat-sleeping.png");
     max-width: 275px;
     max-height: 275px;
 }
 
 #sprite-angry {
-    content: url("./assets/madcat.png");
+    content: url("../assets/madcat.png");
     max-width: 275px;
     max-height: 275px;
 }
@@ -162,25 +162,25 @@ body {
 }
 
 .toy.mouse {
-    content: url("./assets/mouse-toy.png");
+    content: url("../assets/mouse-toy.png");
 }
 
 .toy.feather {
-    content: url("./assets/feather-toy.png");
+    content: url("../assets/feather-toy.png");
 }
 
 .toy.yarn {
-    content: url("./assets/play-icon.png");
+    content: url("../assets/play-icon.png");
 }
 
 .toy.fish {
-    content: url("./assets/fish-toy.png");
+    content: url("../assets/fish-toy.png");
 }
 
 /* Food styling */
 
 .food {
-    content: url("./assets/pet-food.png");
+    content: url("../assets/pet-food.png");
     height: 100px;
     align-self: flex-end;
 }
@@ -188,11 +188,11 @@ body {
 /* ZZZ styling */
 
 .zzz {
-    content: url("./assets/sleep.png");
+    content: url("../assets/sleep.png");
     height: 100px;
     position: absolute;
     right: 325px;
-    bottom: 400px;
+    bottom: 600px;
 }
 
 /* Game button area style */
