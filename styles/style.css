@@ -51,6 +51,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    font-size: 18px;
 }
 
 /* Game area styling */
@@ -74,7 +75,7 @@ body {
     grid-template-rows: 4fr 3fr 1fr;
     width: 950px;
     height: 720px;
-    background-image: url(/assets/background-livingroom-night1.png);
+    background-image: url(/assets/background-livingroom-night.png);
     background-size: inherit;
     background-repeat: no-repeat;
     background-color: #000000;
@@ -118,6 +119,8 @@ body {
 .sprite-area {
     align-self: end;
     justify-self: center;
+    display: flex;
+    flex-direction: row;
 }
 
 #sprite {
@@ -148,6 +151,30 @@ body {
     content: url(/assets/madcat.png);
     max-width: 275px;
     max-height: 275px;
+}
+
+/* Random Toy styling */
+
+.toy {
+    height: 100px;
+    margin: 10px;
+    align-self: flex-end;
+}
+
+.toy.mouse {
+    content: url(/assets/mouse-toy.png);
+}
+
+.toy.feather {
+    content: url(/assets/feather-toy.png);
+}
+
+.toy.yarn {
+    content: url(/assets/play-icon.png);
+}
+
+.toy.fish {
+    content: url(/assets/fish-toy.png);
 }
 
 /* Game button area style */

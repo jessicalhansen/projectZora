@@ -43,17 +43,7 @@ console.log('Project Zero');
         
 */
 
-///////////////////////////////////////////////////
-           //   Button Selectors  //
-///////////////////////////////////////////////////
 
-// Start button
-const startGameBtn = document.getElementById(`start-game-button`);
-
-// Game control buttons
-const foodBtn = document.getElementById('food-button');
-const playBtn = document.getElementById('play-button');
-const sleepBtn = document.getElementById('sleep-button');
 
 ///////////////////////////////////////////////////
              //   Game Objects   //
@@ -129,15 +119,31 @@ function increaseStats() {
 /////////////////////////////////////////////
 
 // Food control button
+// function foodTime() {
+//     $(`.sprite`).attr(`id`, `sprite-food`);
+//     $(`.game-area-night`).attr(`class`, `game-area`);
+
+//     if (newCat.hunger > 0) {
+//         newCat.hunger = 0;
+//         renderStats();
+//     } 
+//     else $(`.sprite`).attr(`id`, `sprite`)
+// }
+
 function foodTime() {
     $(`.sprite`).attr(`id`, `sprite-food`);
     $(`.game-area-night`).attr(`class`, `game-area`);
 
     if (newCat.hunger > 0) {
         newCat.hunger = 0;
+
+        setTimeout(function() {
+            $(`.sprite`).attr(`id`, `sprite`);
+        }, 3000);
+
         renderStats();
     } 
-    else $(`.sprite`).attr(`id`, `sprite`)
+    else $(`.sprite`).attr(`id`, `sprite`);
 }
 
 // Play control button
@@ -148,6 +154,13 @@ function playTime() {
 
     if (newCat.boredom > 0) {
         newCat.boredom = 0;
+        populateToy();
+
+        setTimeout(function() {
+            $(`.sprite`).attr(`id`, `sprite`);
+            $(`.toy`).remove();
+        }, 3000);
+
         renderStats();
     }
     else $(`.sprite`).attr(`id`, `sprite`);
@@ -161,10 +174,35 @@ function sleepTime() {
 
     if (newCat.sleepiness > 0) {
         newCat.sleepiness = 0;
+
+        setTimeout(function() {
+            $(`.sprite`).attr(`id`, `sprite`);
+            $(`.game-area-night`).attr(`class`, `game-area`); 
+        }, 3000);
+
         renderStats();
     }
     else $(`.sprite`).attr(`id`, `sprite`)
     && $(`.game-area-night`).attr(`class`, `game-area`); 
+}
+
+/////////////////////////////////////////////
+           //   Random toy  //
+/////////////////////////////////////////////
+
+function getRandomToy() {
+
+    const toyList = ["mouse", "feather", "yarn", "fish",];
+
+    const randomNumber = Math.floor(Math.random() * 4);
+
+    return toyList[randomNumber];
+}
+
+function populateToy() {
+    const sendToy = $(`<div class="toy ${getRandomToy()}" />`);
+
+    $(`.sprite-area`).prepend(sendToy);
 }
 
 /////////////////////////////////////////////
@@ -174,6 +212,29 @@ function sleepTime() {
 function createStartSprite() {
     $(`.sprite`).attr(`id`, `sprite`);
 }
+
+/////////////////////////////////////////////
+       //   Create game controls   //
+/////////////////////////////////////////////
+
+// function createGameControls() {
+//     // Food button
+//     const createFoodBtn = $(`<button id="food-button">
+//     <img src="/assets/cat-food.png" alt="Feed me!" class="food-icon">
+//     </button>`);
+
+//     // Play button
+//     const createPlayBtn = $(`<button id="play-button">
+//     <img src="/assets/play-icon.png" alt="Play time!" class="play-icon">
+//     </button>`);
+
+//     // Sleep button
+//     const createSleepBtn = $(`<button id="sleep-button">
+//     <img src="/assets/sleep.png" alt="Sleep time!" class="sleep-icon">
+//     </button>`);
+
+//     $(`.game-controls`).append(createFoodBtn, createPlayBtn, createSleepBtn);
+// }
 
 /////////////////////////////////////////////
        //   Start button function   //
@@ -201,6 +262,18 @@ function runAway() {
         Your lack of love and care made ${newCat.name} run away!</p>`);
         $(`.game-controls`).append(runawayMessage);
 }
+
+///////////////////////////////////////////////////
+           //   Button Selectors  //
+///////////////////////////////////////////////////
+
+// Start button
+const startGameBtn = document.getElementById(`start-game-button`);
+
+// Game control buttons
+const foodBtn = document.getElementById('food-button');
+const playBtn = document.getElementById('play-button');
+const sleepBtn = document.getElementById('sleep-button');
 
 ////////////////////////////////////////////
          //   Event Listeners   //
