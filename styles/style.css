@@ -124,7 +124,7 @@ body {
 }
 
 #sprite {
-    content: url("../assets/cat-standing-left.png");
+    content: url("/assets/cat-standing-left.png");
     max-width: 275px;
     max-height: 275px;
 }
