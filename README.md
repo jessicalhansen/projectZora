@@ -44,30 +44,25 @@
     
 <h3>Wireframe</h3>
 
+![wireframe](https://media.git.generalassemb.ly/user/32534/files/1f684780-4e75-11eb-9c52-e6f4a63e2526)
 
 <h3>User Story:</h3>
-<p>Congratulations!</p>
-
-        <p>
-            You were lucky enough to find a beautiful blue kitten at the local animal shelter! <br />
-            Now it's time to welcome Zora home!
-        </p>
+<p>Congratulations!
         
-        <p>Click on the "Start!" button to begin play!</p>
-
-        <p>
-            The three main buttons control the gameplay by allowing you to: <br />
-            feed Zora to reset her hunger level, <br />
-            play with Zora to reset her boredom level, <br />
-            and make Zora rest to reset her sleepiness. <br />
-        </p>
-
-        <p>
-            Zora's hunger, boredom, and sleepiness stats all increment by 1 every 10 seconds. You will hear an alert from Zora every time they go up. Zora's hunger will also go up by 1 every time you play with her, along with boredom every time you make Zora rest, and her sleepiness will go up by 1 every time you feed Zora. 
-        </p>
+   You were lucky enough to find a beautiful blue kitten at the local animal shelter! <br />
+   Now it's time to welcome Zora home!
         
-        <p>
-            Be sure to avoid reaching 10 in any stat, or Zora will become very upset and run away! 
-        </p>
+   Click on the "Start!" button to begin play!
 
-        <p>See how long you can take care of her!</p>
+   The three main buttons control the gameplay by allowing you to:
+   feed Zora to reset her hunger level,
+   play with Zora to reset her boredom level,
+   and make Zora rest to reset her sleepiness.
+
+   Zora's hunger, boredom, and sleepiness stats all increment by 1 every 10 seconds. You will hear an alert from Zora every time they go up. Zora's hunger will also go up by 1 every time you play with her, along with boredom every time you make Zora rest, and her sleepiness will go up by 1 every time you feed Zora. 
+            
+   Be sure to avoid reaching 10 in any stat, or Zora will become very upset and run away! 
+       
+
+   See how long you can take care of her!
+   </p>
