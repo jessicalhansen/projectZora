@@ -63,6 +63,15 @@ const newCat = new Cat;
 // may add ability to create additional cats in future.
 
 ///////////////////////////////////////////////
+        //   Sound Effects   //
+///////////////////////////////////////////////
+
+const shortMeow = new Audio(`/assets/cat-meow-short.wav`);
+const excitedPurr = new Audio(`/assets/excitedpurr.wav`);
+const pouringCatFood = new Audio(`/assets/pouring-catfood.wav`);
+const catGrowls = new Audio(`/assets/catgrowls.wav`);
+
+///////////////////////////////////////////////
            //   Stat functions   //
 ///////////////////////////////////////////////
 
@@ -105,6 +114,8 @@ function increaseStats() {
         newCat.boredom++;
         newCat.sleepiness++;
 
+        shortMeow.play();
+
         renderStats();
     }
     // increase age every 20 seconds.
@@ -118,28 +129,22 @@ function increaseStats() {
         //   Control button functions  //
 /////////////////////////////////////////////
 
-// Food control button
-// function foodTime() {
-//     $(`.sprite`).attr(`id`, `sprite-food`);
-//     $(`.game-area-night`).attr(`class`, `game-area`);
-
-//     if (newCat.hunger > 0) {
-//         newCat.hunger = 0;
-//         renderStats();
-//     } 
-//     else $(`.sprite`).attr(`id`, `sprite`)
-// }
-
 function foodTime() {
     $(`.sprite`).attr(`id`, `sprite-food`);
     $(`.game-area-night`).attr(`class`, `game-area`);
+    
+    pouringCatFood.play();
 
     if (newCat.hunger > 0) {
         newCat.hunger = 0;
+        populateFood();
+
+        newCat.sleepiness++;
 
         setTimeout(function() {
             $(`.sprite`).attr(`id`, `sprite`);
-        }, 3000);
+            $(`.food`).remove();
+        }, 2000);
 
         renderStats();
     } 
@@ -151,15 +156,18 @@ function playTime() {
     $(`.sprite`).attr(`id`, `sprite-play`);
     $(`.game-area-night`).attr(`class`, `game-area`);
 
+    excitedPurr.play();
 
     if (newCat.boredom > 0) {
         newCat.boredom = 0;
         populateToy();
 
+        newCat.hunger++;
+
         setTimeout(function() {
             $(`.sprite`).attr(`id`, `sprite`);
             $(`.toy`).remove();
-        }, 3000);
+        }, 2000);
 
         renderStats();
     }
@@ -174,11 +182,15 @@ function sleepTime() {
 
     if (newCat.sleepiness > 0) {
         newCat.sleepiness = 0;
+        populateClouds();
+
+        newCat.boredom++;
 
         setTimeout(function() {
             $(`.sprite`).attr(`id`, `sprite`);
             $(`.game-area-night`).attr(`class`, `game-area`); 
-        }, 3000);
+            $(`.zzz`).remove();
+        }, 2000);
 
         renderStats();
     }
@@ -203,6 +215,26 @@ function populateToy() {
     const sendToy = $(`<div class="toy ${getRandomToy()}" />`);
 
     $(`.sprite-area`).prepend(sendToy);
+}
+
+/////////////////////////////////////////////
+         //  Populate food  //
+/////////////////////////////////////////////
+
+function populateFood() {
+    const sendFood = $(`<div class="food" />`);
+
+    $(`.sprite-area`).prepend(sendFood);
+}
+
+/////////////////////////////////////////////
+        //  Populate dreamclouds  //
+/////////////////////////////////////////////
+
+function populateClouds() {
+    const sendZ = $(`<div class="zzz" />`);
+
+    $(`.game-text-area`).append(sendZ);
 }
 
 /////////////////////////////////////////////
@@ -244,6 +276,7 @@ function startClick() {
     startTimer();
     $(`#start-game-button`).remove();
     createStartSprite();
+    shortMeow.play();
 }
 
 /////////////////////////////////////////////
@@ -256,10 +289,11 @@ function runAway() {
         $(`#food-button`).remove();
         $(`#play-button`).remove();
         $(`#sleep-button`).remove();
+        catGrowls.play();
 
         const runawayMessage = $(`<p class="ingame-text">
         <span id="game-over">GAME OVER: </span>
-        Your lack of love and care made ${newCat.name} run away!</p>`);
+        Your lack of care and love made ${newCat.name} run away!</p>`);
         $(`.game-controls`).append(runawayMessage);
 }
 

@@ -91,7 +91,7 @@ body {
 }
 
 .ingame-text {
-    font-size: 30px;
+    font-size: 28px;
 }
 
 #game-over {
@@ -175,6 +175,24 @@ body {
 
 .toy.fish {
     content: url(/assets/fish-toy.png);
+}
+
+/* Food styling */
+
+.food {
+    content: url(/assets/pet-food.png);
+    height: 100px;
+    align-self: flex-end;
+}
+
+/* ZZZ styling */
+
+.zzz {
+    content: url(/assets/sleep.png);
+    height: 150px;
+    position: absolute;
+    right: 300px;
+    top: 450px;
 }
 
 /* Game button area style */
