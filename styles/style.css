@@ -53,11 +53,6 @@ body {
     align-items: flex-end;
 }
 
-.statistics i {
-    color: var(--mainred);
-    font-size: 18px;
-}
-
 /* Game area styling */
 
 .game-area {
@@ -71,15 +66,42 @@ body {
     background-size: inherit;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-rows: 3fr 2fr 1fr;
+    grid-template-rows: 4fr 3fr 1fr;
 }
 
-/* Start button styling */
+.game-area-night {
+    display: grid;
+    grid-template-rows: 4fr 3fr 1fr;
+    width: 950px;
+    height: 720px;
+    background-image: url(/assets/background-livingroom-night1.png);
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    border: 2px solid var(--mainred);
+    border-radius: 5px;
+}
 
-.start-button {
+/* Game text area styling */
+
+.game-text-area {
     justify-self: center;
     align-self: end;
 }
+
+.ingame-text {
+    font-size: 30px;
+}
+
+#game-over {
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 var(--readme), 
+                  1px -1px 0 var(--readme), 
+                  1px 1px 0 var(--readme);
+}
+
+/* Start button styling */
 
 #start-game-button {
     font-size: 100px;
@@ -91,7 +113,6 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-
 /* Sprite area styling */
 
 .sprite-area {
@@ -99,7 +120,32 @@ body {
     justify-self: center;
 }
 
-.sprite img {
+#sprite {
+    content: url(/assets/cat-standing-left.png);
+    max-width: 275px;
+    max-height: 275px;
+}
+
+#sprite-food {
+    content: url(/assets/cat-happy.png);
+    max-width: 275px;
+    max-height: 275px;
+}
+
+#sprite-play {
+    content: url(/assets/cat-lyingdown-eyes.png);
+    max-width: 275px;
+    max-height: 275px;
+}
+
+#sprite-sleep {
+    content: url(/assets/cat-sleeping.png);
+    max-width: 275px;
+    max-height: 275px;
+}
+
+#sprite-angry {
+    content: url(/assets/madcat.png);
     max-width: 275px;
     max-height: 275px;
 }
@@ -146,6 +192,16 @@ footer {
     text-align: center;
     font-size: 14px;
     margin: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+footer i {
+    font-size: 40px;
+    color: var(--mainred);
+    margin: 10px;
 }
 
 

@@ -56,16 +56,6 @@ const playBtn = document.getElementById('play-button');
 const sleepBtn = document.getElementById('sleep-button');
 
 ///////////////////////////////////////////////////
-             //  Sprite Selectors //
-///////////////////////////////////////////////////
-
-// const startSprite = $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
-// const foodSprite = $(`#sprite`).attr(`src`, `/assets/cat-happy.png`);
-// const playSprite = $(`#sprite`).attr(`src`, `/assets/cat-lyingdown-eyes.png`);
-// const sleepSprite = $(`#sprite`).attr(`src`, `/assets/cat-sleeping.png`);
-// const madSprite = $(`#sprite`).attr(`src`, `/assets/madcat.png`);
-
-///////////////////////////////////////////////////
              //   Game Objects   //
 ///////////////////////////////////////////////////
 
@@ -87,7 +77,7 @@ const newCat = new Cat;
 ///////////////////////////////////////////////
 
 function renderStats() {
-    $(`#timer`).text(`Timer: ${timer}`);
+    // $(`#timer`).text(`Timer: ${timer}`);
     $(`#age`).text(`Age: ${newCat.age}`);
     $(`#hunger`).text(`Hunger: ${newCat.hunger}`);
     $(`#boredom`).text(`Boredom: ${newCat.boredom}`);
@@ -103,18 +93,18 @@ let timer = 0;
 function startTimer() {
     const counter = setInterval(function() {
         timer++;
-        
         increaseStats();
-        renderStats();
 
         // STOP TIMER WHEN STATS HIT 10
         if (newCat.hunger === 10 
             || newCat.boredom === 10 
             || newCat.sleepiness === 10) {
             clearInterval(counter);
-            $(`#sprite`).attr(`src`, `/assets/madcat.png`);
+            
+            runAway();
         }
-    }, 1000);
+    }, 1000); 
+    renderStats();
 }
 
 //  Increase stats every 10 seconds, except age.
@@ -140,46 +130,50 @@ function increaseStats() {
 
 // Food control button
 function foodTime() {
-    $(`#sprite`).attr(`src`, `/assets/cat-happy.png`);
+    $(`.sprite`).attr(`id`, `sprite-food`);
+    $(`.game-area-night`).attr(`class`, `game-area`);
 
     if (newCat.hunger > 0) {
         newCat.hunger = 0;
         renderStats();
     } 
-    else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
-};
+    else $(`.sprite`).attr(`id`, `sprite`)
+}
 
 // Play control button
 function playTime() {
-    $(`#sprite`).attr(`src`, `/assets/cat-lyingdown-eyes.png`);
+    $(`.sprite`).attr(`id`, `sprite-play`);
+    $(`.game-area-night`).attr(`class`, `game-area`);
+
 
     if (newCat.boredom > 0) {
         newCat.boredom = 0;
         renderStats();
     }
-    else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
-};
+    else $(`.sprite`).attr(`id`, `sprite`);
+}
 
 // Sleep control button
 function sleepTime() {
-    $(`#sprite`).attr(`src`, `/assets/cat-sleeping.png`);
+    $(`.sprite`).attr(`id`, `sprite-sleep`);
+    $(`.game-area`).attr(`class`, `game-area-night`);
+    
 
     if (newCat.sleepiness > 0) {
         newCat.sleepiness = 0;
         renderStats();
     }
-    else $(`#sprite`).attr(`src`, `/assets/cat-standing-left.png`);
-};
+    else $(`.sprite`).attr(`id`, `sprite`)
+    && $(`.game-area-night`).attr(`class`, `game-area`); 
+}
 
 /////////////////////////////////////////////
            //  Create Sprite  //
 /////////////////////////////////////////////
 
 function createStartSprite() {
-    const createSprite = $(`<img src="/assets/cat-standing-left.png" id="sprite">`);
-
-    $(`.sprite`).append(createSprite);
-};
+    $(`.sprite`).attr(`id`, `sprite`);
+}
 
 /////////////////////////////////////////////
        //   Start button function   //
@@ -189,6 +183,23 @@ function startClick() {
     startTimer();
     $(`#start-game-button`).remove();
     createStartSprite();
+}
+
+/////////////////////////////////////////////
+        //   Runaway function   //
+/////////////////////////////////////////////
+
+function runAway() {
+    $(`.sprite`).attr(`id`, `sprite-angry`);
+        $(`.game-area-night`).attr(`class`, `game-area`);
+        $(`#food-button`).remove();
+        $(`#play-button`).remove();
+        $(`#sleep-button`).remove();
+
+        const runawayMessage = $(`<p class="ingame-text">
+        <span id="game-over">GAME OVER: </span>
+        Your lack of love and care made ${newCat.name} run away!</p>`);
+        $(`.game-controls`).append(runawayMessage);
 }
 
 ////////////////////////////////////////////
