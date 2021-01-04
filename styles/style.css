@@ -1,3 +1,9 @@
+/* Color variables */
+:root {
+    --mainred: #C94D45;
+    --wallpaper: #FEC6B5; 
+    --readme: #FDDFD4;
+}
 /* Main grid styling */
 body {
     font-family: 'Ubuntu', sans-serif;
@@ -7,8 +13,8 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     justify-content: center;
-    background-color: #FEC6B5;
-    border: 3px solid #C94D45;
+    background-color: var(--wallpaper);
+    border: 3px solid var(--mainred);
     border-radius: 10px;
     margin: auto;
     max-width: 1000px;
@@ -45,50 +51,148 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    font-size: 18px;
 }
 
 /* Game area styling */
 
 .game-area {
     margin: 5px;
-    border: 2px solid #C94D45;
-    background-color: #C94D45;
+    border: 2px solid var(--mainred);
+    background-color: var(--mainred);
     border-radius: 5px;
     height: 720px;
     width: 950px;
-    background-image: url(/assets/background-livingroom.png);
+    background-image: url(./assets/background-livingroom.png);
     background-size: inherit;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-rows: 3fr 2fr 1fr;
+    grid-template-rows: 4fr 3fr 1fr;
 }
 
-/* Start button styling */
+.game-area-night {
+    display: grid;
+    grid-template-rows: 4fr 3fr 1fr;
+    width: 950px;
+    height: 720px;
+    background-image: url(./assets/background-livingroom-night.png);
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    border: 2px solid var(--mainred);
+    border-radius: 5px;
+}
 
-.start-button {
+/* Game text area styling */
+
+.game-text-area {
     justify-self: center;
     align-self: end;
 }
+
+.ingame-text {
+    font-size: 28px;
+}
+
+#game-over {
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 var(--readme), 
+                  1px -1px 0 var(--readme), 
+                  1px 1px 0 var(--readme);
+}
+
+/* Start button styling */
 
 #start-game-button {
     font-size: 100px;
     font-weight: bold;
     color: #ffffff;
-    text-shadow: -3px -3px 0 #C94D45, 3px -3px 0 #C94D45, 3px 3px 0 #C94D45;
+    text-shadow: -3px -3px 0 var(--mainred), 
+                  3px -3px 0 var(--mainred), 
+                  3px 3px 0 var(--mainred);
     font-family: 'Ubuntu', sans-serif;
 }
-
 
 /* Sprite area styling */
 
 .sprite-area {
     align-self: end;
     justify-self: center;
+    display: flex;
+    flex-direction: row;
 }
 
-.sprite img {
+#sprite {
+    content: url(./assets/cat-standing-left.png);
     max-width: 275px;
     max-height: 275px;
+}
+
+#sprite-food {
+    content: url(./assets/cat-happy.png);
+    max-width: 275px;
+    max-height: 275px;
+}
+
+#sprite-play {
+    content: url(./assets/cat-lyingdown-eyes.png);
+    max-width: 275px;
+    max-height: 275px;
+}
+
+#sprite-sleep {
+    content: url(./assets/cat-sleeping.png);
+    max-width: 275px;
+    max-height: 275px;
+}
+
+#sprite-angry {
+    content: url(./assets/madcat.png);
+    max-width: 275px;
+    max-height: 275px;
+}
+
+/* Random Toy styling */
+
+.toy {
+    height: 100px;
+    margin: 10px;
+    align-self: flex-end;
+}
+
+.toy.mouse {
+    content: url(./assets/mouse-toy.png);
+}
+
+.toy.feather {
+    content: url(./assets/feather-toy.png);
+}
+
+.toy.yarn {
+    content: url(./assets/play-icon.png);
+}
+
+.toy.fish {
+    content: url(./assets/fish-toy.png);
+}
+
+/* Food styling */
+
+.food {
+    content: url(./assets/pet-food.png);
+    height: 100px;
+    align-self: flex-end;
+}
+
+/* ZZZ styling */
+
+.zzz {
+    content: url(./assets/sleep.png);
+    height: 100px;
+    position: absolute;
+    right: 325px;
+    bottom: 400px;
 }
 
 /* Game button area style */
@@ -112,6 +216,10 @@ button:hover {
     transform: scale(1.2);
 }
 
+button:active {
+    transform: translateY(4px);
+}
+
 .game-controls img {
     width: 80px;
 }
@@ -119,12 +227,27 @@ button:hover {
 /* Player guide styling */
 
 .play-guide {
-    border: 1px solid #C94D45;
+    border: 1px solid var(--mainred);
     border-radius: 3px;
-    background-color: #FDDFD4;
+    background-color: var(--readme);
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
     align-self: center;
+    font-size: 18px;
+    max-width: 933px;
+    text-align: center;
+}
+
+.how-to-play {
+    font-size: 30px;
+}
+
+.congrats {
+    font-weight: 900;
+}
+
+.gotcha {
+    margin-top: 60px;
 }
 
 /* Footer styling */
@@ -133,6 +256,16 @@ footer {
     text-align: center;
     font-size: 14px;
     margin: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+footer i {
+    font-size: 40px;
+    color: var(--mainred);
+    margin: 10px;
 }
 
 

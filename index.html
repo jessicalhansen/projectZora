@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- JS -->
-    <script src="/scripts/app.js" defer></script>
+    <script src="./scripts/app.js" defer></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <!-- My CSS -->
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <!-- animateCSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -23,7 +25,7 @@
         <!-- header -->
     <header class="title"> 
         <h1 id="main-title">projectZora</h1>
-        <img class="title-image" src="/assets/cat-standing-logo.png" alt="Cartoon Russian Blue cat"> 
+        <img class="title-image" src="./assets/cat-standing-logo.png" alt="Cartoon Russian Blue cat"> 
     </header>
 
      <!-- main & game area -->
@@ -33,11 +35,13 @@
         <!-- Scoreboard -->
 
         <div class="statistics">
-            <span id="age">Age: 0</span>
-            <span id="hunger">Hunger: 0</span>
-            <span id="boredom">Boredom: 0</span>
-            <span id="sleepiness">Sleepiness: 0</span>
-            <span id="timer">Timer: 0</span>
+    
+            <span id="age"></span>
+            <span id="hunger"></span>
+            <span id="boredom"></span>
+            <span id="sleepiness"></span>
+            <!-- <span id="timer"></span> -->
+
         </div>
 
         <!-- game area start -->
@@ -46,7 +50,7 @@
 
             <!-- start button -->
 
-            <div class="start-button">
+            <div class="game-text-area">
 
                 <button id="start-game-button">Start!</button>
 
@@ -65,23 +69,51 @@
             <!-- game controls-->
 
             <div class="game-controls">
+                
+           <!-- food button -->
+           <button id="food-button"><img src="./assets/cat-food.png" alt="Feed me!" class="food-icon"></button>
 
-            <!-- food button -->
-            <button id="food-button"><img src="/assets/cat-food.png" alt="Feed me!" class="food-icon"></button>
+           <!-- play button -->
+           <button id="play-button"><img src="./assets/play-icon.png" alt="Play time!" class="play-icon"></button>
 
-            <!-- play button -->
-            <button id="play-button"><img src="/assets/play-icon.png" alt="Play time!" class="play-icon"></button>
-
-            <!-- sleep button -->
-            <button id="sleep-button"><img src="/assets/sleep.png" alt="Sleep time!" class="sleep-icon"></button>
-
+           <!-- sleep button -->
+           <button id="sleep-button"><img src="./assets/sleep.png" alt="Sleep time!" class="sleep-icon"></button> 
+                
             </div>
 
         </div>
         
     <div class="play-guide">
 
-        <h2>How to play:</h2>
+        <h2 class="how-to-play">How to play:</h2>
+
+        <p class="congrats">Congratulations!</p>
+
+        <p>
+            You were lucky enough to find a beautiful blue kitten at the local animal shelter! <br />
+            Now it's time to welcome Zora home!
+        </p>
+        
+        <p>Click on the "Start!" button to begin play!</p>
+
+        <p>
+            The three main buttons control the gameplay by allowing you to: <br />
+            feed Zora to reset her hunger level, <br />
+            play with Zora to reset her boredom level, <br />
+            and make Zora rest to reset her sleepiness. <br />
+        </p>
+
+        <p>
+            Zora's hunger, boredom, and sleepiness stats all increment by 1 every 10 seconds. You will hear an alert from Zora every time they go up. Zora's hunger will also go up by 1 every time you play with her, along with boredom every time you make Zora rest, and her sleepiness will go up by 1 every time you feed Zora. 
+        </p>
+        
+        <p>
+            Be sure to avoid reaching 10 in any stat, or Zora will become very upset and run away! 
+        </p>
+
+        <p>See how long you can take care of her!</p>
+
+        <p class="gotcha">Happy Gotcha Day, Zora! - 1/5/2019</p>
 
     </div>
 
@@ -89,8 +121,10 @@
         
         <!-- footer -->
     <footer class="footer">
-     <p>Made by Jessica Hansen for WC-SEIR-1207 2020 Project Zero (noncommercial use). <br />
+        <i class="far fa-paw"></i>
+     <p>Made by Jessica Hansen for WC-SEIR-1207 2021 Project Zero  (noncommercial use). <br />
      Please support your local rescue organizations!</p>
+        <i class="far fa-paw"></i>
     </footer>
     
     </div>
