@@ -190,9 +190,6 @@ body {
 .zzz {
     content: url("../assets/sleep.png");
     height: 100px;
-    position: absolute;
-    right: 325px;
-    bottom: 600px;
 }
 
 /* Game button area style */
