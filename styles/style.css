@@ -189,10 +189,10 @@ body {
 
 .zzz {
     content: url(/assets/sleep.png);
-    height: 150px;
+    height: 100px;
     position: absolute;
-    right: 300px;
-    top: 450px;
+    right: 325px;
+    bottom: 400px;
 }
 
 /* Game button area style */
@@ -216,6 +216,10 @@ button:hover {
     transform: scale(1.2);
 }
 
+button:active {
+    transform: translateY(4px);
+}
+
 .game-controls img {
     width: 80px;
 }
@@ -227,8 +231,19 @@ button:hover {
     border-radius: 3px;
     background-color: var(--readme);
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
     align-self: center;
+    font-size: 18px;
+    max-width: 933px;
+    text-align: center;
+}
+
+.how-to-play {
+    font-size: 30px;
+}
+
+.congrats {
+    font-weight: bold;
 }
 
 /* Footer styling */

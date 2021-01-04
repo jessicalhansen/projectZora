@@ -132,12 +132,13 @@ function increaseStats() {
 function foodTime() {
     $(`.sprite`).attr(`id`, `sprite-food`);
     $(`.game-area-night`).attr(`class`, `game-area`);
-    
-    pouringCatFood.play();
 
     if (newCat.hunger > 0) {
         newCat.hunger = 0;
+
         populateFood();
+
+        pouringCatFood.play();
 
         newCat.sleepiness++;
 
@@ -148,7 +149,7 @@ function foodTime() {
 
         renderStats();
     } 
-    else $(`.sprite`).attr(`id`, `sprite`);
+    // else $(`.sprite`).attr(`id`, `sprite`);
 }
 
 // Play control button
@@ -156,11 +157,12 @@ function playTime() {
     $(`.sprite`).attr(`id`, `sprite-play`);
     $(`.game-area-night`).attr(`class`, `game-area`);
 
-    excitedPurr.play();
-
     if (newCat.boredom > 0) {
         newCat.boredom = 0;
+
         populateToy();
+
+        excitedPurr.play();
 
         newCat.hunger++;
 
@@ -182,6 +184,7 @@ function sleepTime() {
 
     if (newCat.sleepiness > 0) {
         newCat.sleepiness = 0;
+
         populateClouds();
 
         newCat.boredom++;
