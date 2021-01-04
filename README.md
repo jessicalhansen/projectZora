@@ -42,9 +42,16 @@
     - Zora runs away, animiate angry cat icon
     - except age.
     
-<h3>Wireframe</h3>
+<h3>Wireframe:</h3>
 
 ![wireframe](https://media.git.generalassemb.ly/user/32534/files/1f684780-4e75-11eb-9c52-e6f4a63e2526)
+
+
+<h3>Challenges:</h3>
+
+I spent a lot of time trying to figure out how to center the "Start!" button, not realizing that the reason I was encountering issues was due to having the desired background image as an <img> tag instead of a background-image in CSS. Once I figured out that error, I was able to successfully center the button with a little additional effort. 
+
+I also encountered a lot of issues with getting animations to work on the page, and I intended to have the sprite walk across the screen. I still have been unsuccessful in making the animation work, and that may be in part to the way I attached the sprite images in CSS using content: url(). I tried using animate in CSS using @keyframes, as well as trying to animate using jQuery.animate().
 
 <h3>User Story:</h3>
 <p>Congratulations!
