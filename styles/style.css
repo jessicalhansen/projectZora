@@ -63,7 +63,7 @@ body {
     border-radius: 5px;
     height: 720px;
     width: 950px;
-    background-image: url(../assets/background-livingroom.png);
+    background-image: url("./assets/background-livingroom.png");
     background-size: inherit;
     background-repeat: no-repeat;
     display: grid;
@@ -162,7 +162,7 @@ body {
 }
 
 .toy.mouse {
-    content: url(../assets/mouse-toy.png);
+    content: url("./assets/mouse-toy.png");
 }
 
 .toy.feather {
