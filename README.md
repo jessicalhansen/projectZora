@@ -1,6 +1,30 @@
 # project-zero
 <h2>Welcome to projectZora!</h2>
 
+<h3>Link to game:</h3>
+https://jessicalhansen.github.io/projectZora/
+
+<h3>User Story:</h3>
+<p>Congratulations!
+        
+   You were lucky enough to find a beautiful blue kitten at the local animal shelter! 
+   Now it's time to welcome Zora home!
+        
+   Click on the "Start!" button to begin play!
+
+   The three main buttons control the gameplay by allowing you to:
+   feed Zora to reset her hunger level,
+   play with Zora to reset her boredom level,
+   and make Zora rest to reset her sleepiness.
+
+   Zora's hunger, boredom, and sleepiness stats all increment by 1 every 10 seconds. You will hear an alert from Zora every time they go up. Zora's hunger will also go up by 1 every time you play with her, along with boredom every time you make Zora rest, and her sleepiness will go up by 1 every time you feed Zora. 
+            
+   Be sure to avoid reaching 10 in any stat, or Zora will become very upset and run away! 
+       
+
+   See how long you can take care of her!
+   </p>
+
 <h3>Pseudo code:</h3>
 
 1. Create a Tamagotchi class - cat
@@ -53,23 +77,5 @@ I spent a lot of time trying to figure out how to center the "Start!" button, no
 
 I also encountered a lot of issues with getting animations to work on the page, and I intended to have the sprite walk across the screen. I still have been unsuccessful in making the animation work, and that may be in part to the way I attached the sprite images in CSS using content: url(). I tried using animate in CSS using @keyframes, as well as trying to animate using jQuery.animate().
 
-<h3>User Story:</h3>
-<p>Congratulations!
-        
-   You were lucky enough to find a beautiful blue kitten at the local animal shelter! <br />
-   Now it's time to welcome Zora home!
-        
-   Click on the "Start!" button to begin play!
 
-   The three main buttons control the gameplay by allowing you to:
-   feed Zora to reset her hunger level,
-   play with Zora to reset her boredom level,
-   and make Zora rest to reset her sleepiness.
-
-   Zora's hunger, boredom, and sleepiness stats all increment by 1 every 10 seconds. You will hear an alert from Zora every time they go up. Zora's hunger will also go up by 1 every time you play with her, along with boredom every time you make Zora rest, and her sleepiness will go up by 1 every time you feed Zora. 
-            
-   Be sure to avoid reaching 10 in any stat, or Zora will become very upset and run away! 
-       
-
-   See how long you can take care of her!
-   </p>
+Thanks for looking!
